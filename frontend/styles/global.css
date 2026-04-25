@@ -1,3 +1,25 @@
+.card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+}
+
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+root, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    --brand-blue: #186ADE;
+    --brand-blue-hover: #1559B2;
+    --brand-light-blue: #F0F4F8;
+}
+
 p {
     color: black;
 }

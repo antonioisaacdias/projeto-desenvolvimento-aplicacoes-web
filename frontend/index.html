@@ -6,10 +6,143 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="/frontend/styles/global.css">
     <title>Evento Tech</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-    <p class="text-center mt-5">Welcome to Evento Tech!</p>
-    
+<body class="bg-light d-flex flex-column min-vh-100">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="/frontend/imgs/logo_evento_tech.png" alt="Logo do Evento Tech" height="40" class="d-inline-block align-text-top me-2">
+                </a>
+                <ul class="nav">
+                    <li class="nav-item fw-bold active">
+                        <a class="nav-link active" aria-current="page" href="/frontend/index.html">Início</a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a class="nav-link" href="/frontend/inscricao.html">Inscrição</a>
+                    </li>
+                    <li class="nav-item fw-bold">
+                        <a class="nav-link" href="/frontend/fale-conosco.html">Contato</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <main class="container-fluid text-center p-0">
+            <section class="container-fluid text-center bg-primary bg-opacity-10 pt-5 m-0 w" style="padding-bottom: 5rem;">
+                <h1>Evento Tech</h1>
+                <p>12 de Outubro | Inscrições Abertas</p>
+                <button class="btn btn-primary">Inscreva-se Agora</button>
+            </section>
+            <section class="container d-flex flex-nowrap justify-content-center gap-4" style="margin-top: -30px; position: relative; z-index: 10;">
+                <div class="card border-0 shadow p-3 d-flex flex-row align-items-center card-hover" style="min-width: 250px;">
+                    <i data-lucide="calendar" class="text-primary me-3" style="width: 30px; height: 30px;"></i>
+                    <div class="text-start">
+                        <p class="fw-bold mb-0">Data e Hora</p>
+                        <small class="text-muted">12 de Outubro</small>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow p-3 d-flex flex-row align-items-center card-hover" style="min-width: 250px;">
+                    <i data-lucide="map-pin" class="text-primary me-3" style="width: 30px; height: 30px;"></i>
+                    <div class="text-start">
+                        <p class="fw-bold mb-0">Localização</p>
+                        <small class="text-muted">Auditório Central UNIPÊ</small>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow p-3 d-flex flex-row align-items-center card-hover" style="min-width: 250px;">
+                    <i data-lucide="clock" class="text-primary me-3" style="width: 30px; height: 30px;"></i>
+                    <div class="text-start">
+                        <p class="fw-bold mb-0">Horário</p>
+                        <small class="text-muted">08:00h às 17:00h</small>
+                    </div>
+                </div>
+            </section>
+            <section class="container my-5">
+                <div id="carrosselEvento" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carrosselEvento" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carrosselEvento" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carrosselEvento" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded shadow">
+                        <div class="carousel-item active">
+                            <img src="/frontend/imgs/hackathon.jpeg" class="d-block w-100" alt="Hackathon" style="height: 450px; object-fit: cover;">
+                            <div class="carousel-caption" style="background: rgba(0,0,0,0.55); left: 0; right: 0; bottom: 0; padding: 16px 20px 32px;">
+                                <h5 class="fw-bold">Hackathon</h5>
+                                <p class="mb-0">Legenda da imagem do hackathon</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/frontend/imgs/palestras.jpg" class="d-block w-100" alt="Palestras" style="height: 450px; object-fit: cover;">
+                            <div class="carousel-caption" style="background: rgba(0,0,0,0.55); left: 0; right: 0; bottom: 0; padding: 16px 20px 32px;">
+                                <h5 class="fw-bold">Palestras</h5>
+                                <p class="mb-0">Legenda da imagem das palestras</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/frontend/imgs/workshops.jpeg" class="d-block w-100" alt="Workshops" style="height: 450px; object-fit: cover;">
+                            <div class="carousel-caption" style="background: rgba(0,0,0,0.55); left: 0; right: 0; bottom: 0; padding: 16px 20px 32px;">
+                                <h5 class="fw-bold">Workshops</h5>
+                                <p class="mb-0">Legenda da imagem dos workshops</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carrosselEvento" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carrosselEvento" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </header>
+    <footer class="bg-dark text-white mt-auto pt-5 pb-3">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Evento Tech</h5>
+                    <p class="text-white-50 small">O maior evento de tecnologia da região, reunindo profissionais, estudantes e entusiastas para um dia de aprendizado e networking.</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Links Rápidos</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="/frontend/index.html" class="text-white-50 text-decoration-none small">Home</a></li>
+                        <li class="mb-1"><a href="/frontend/inscricao.html" class="text-white-50 text-decoration-none small">Inscrição</a></li>
+                        <li class="mb-1"><a href="/frontend/fale-conosco.html" class="text-white-50 text-decoration-none small">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Contato</h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i data-lucide="map-pin" style="width:16px;height:16px;"></i>
+                            Auditório Central UNIPÊ, João Pessoa - PB
+                        </li>
+                        <li class="mb-2 d-flex align-items-center gap-2">
+                            <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+                            12 de Outubro, 08h às 17h
+                        </li>
+                        <li class="d-flex align-items-center gap-2">
+                            <i data-lucide="mail" style="width:16px;height:16px;"></i>
+                            contato@eventotech.com.br
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <p class="text-center text-white-50 small mb-0">&copy; 2024 Evento Tech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      lucide.createIcons();
+    </script>
 </body>
 </html>
