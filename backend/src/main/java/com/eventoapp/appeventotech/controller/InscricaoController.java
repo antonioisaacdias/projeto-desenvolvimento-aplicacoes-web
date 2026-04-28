@@ -1,11 +1,13 @@
 package com.eventoapp.appeventotech.controller;
 
-
 import com.eventoapp.appeventotech.model.Inscricao;
 import com.eventoapp.appeventotech.service.InscricaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+// 🔥 IMPORTANTE: importar exceção do banco
+import org.springframework.dao.DataIntegrityViolationException;
 
 @RestController
 @RequestMapping("/api/inscricoes")
@@ -16,14 +18,33 @@ public class InscricaoController {
     private InscricaoService service;
 
     @PostMapping
-    public ResponseEntity<Inscricao> cadastrar(@RequestBody Inscricao inscricao) {
+    public ResponseEntity<?> salvar(@RequestBody Inscricao inscricao) {
         try {
-            Inscricao novaInscricao = service.realizarInscricao(inscricao);
-            return ResponseEntity.ok(novaInscricao);
+            // ✅ fluxo normal
+            return ResponseEntity.ok(service.realizarInscricao(inscricao));
+
+        } catch (IllegalArgumentException e) {
+            // 🔥 erro vindo do SERVICE (validação manual)
+            return ResponseEntity.badRequest().body(e.getMessage());
+
+        } catch (DataIntegrityViolationException e) {
+            // 🔥 NOVO: trata erro do banco (unique constraint)
+
+            String mensagem = "Dado já cadastrado!";
+
+            // tenta identificar qual campo deu erro
+            if (e.getMessage().toLowerCase().contains("email")) {
+                mensagem = "Email já cadastrado!";
+            } else if (e.getMessage().toLowerCase().contains("telefone")) {
+                mensagem = "Telefone já cadastrado!";
+            }
+
+            return ResponseEntity.badRequest().body(mensagem);
+
         } catch (Exception e) {
-            return ResponseEntity.internalServerError().build();
+            // 🔥 fallback (evita erro 500 sem mensagem)
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("Erro interno no servidor");
         }
     }
 }
-
-

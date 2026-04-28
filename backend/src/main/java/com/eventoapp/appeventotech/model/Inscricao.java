@@ -10,7 +10,11 @@ public class Inscricao {
     private Long id;
 
     private String nome;
+
+    @Column (unique=true)
     private String email;
+
+    @Column (unique=true)
     private String telefone;
 
     public Inscricao() {

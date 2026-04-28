@@ -13,11 +13,21 @@ public class InscricaoService {
 
     public Inscricao realizarInscricao(Inscricao inscricao) {
 
-        // salva no banco
-        Inscricao salva = repository.save(inscricao);
+        // 🔥 valida email duplicado
+        if (repository.existsByEmail(inscricao.getEmail())) {
+            throw new IllegalArgumentException("Email já cadastrado!");
 
-        // 🔥 SEM EMAIL (removido totalmente)
+        }
 
-        return salva;
+        // 🔥 valida telefone duplicado
+        if (repository.existsByTelefone(inscricao.getTelefone())) {
+            throw new IllegalArgumentException("Telefone já cadastrado!");
+        }
+
+        return repository.save(inscricao);
+
     }
+
+
+
 }
