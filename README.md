@@ -1,31 +1,32 @@
-# projeto-desenvolvimento-aplicacoes-web
-Projeto inicial para a disciplina de Desenvolvimento de Aplicações Web da Pós-graduação Full Stack Unipê.
+🚀 Landing Page de Cadastro de Eventos
+📖 Visão Geral
 
-Nome: Evento Tech
+Aplicação web para cadastro de eventos, onde usuários enviam suas informações por meio de uma landing page.
 
-Objetivo do projeto:
-Cadastro de inscrição para evento tech.
+Os dados são processados por uma API REST construída com Java + Spring Boot e armazenados em banco de dados, garantindo validações e integridade das informações.
 
-Funcionalidades principais:
-- Descrição do evento com, data, horário, e informações.
-- Inscrição com campos
- 1) Nome
- 2) Email
- 3) Telefone
-- Envio de confirmação por email.
+🎯 Objetivo
 
-Divisão de camadas:
-- Front: Html, css, bootstrap, js puro.
-- Back: java spring.
-- Bd: Postgree
+Aplicar na prática conceitos essenciais de desenvolvimento backend e integração com frontend:
 
-Telas:
-- Tela inicial, com informações e fotos.
-- Página de cadastro
-- Página do entre em contato.
-- Templates de email.
+Arquitetura em camadas
+Criação de API REST
+Validação de dados
+Tratamento de exceções
+Comunicação entre frontend e backend
+🏗️ Arquitetura
 
-Interações esperadas:
-- Botão submit para enviar o formulario de inscrição.
-- Exibir carrossel de fotos e informações.
-- Recebimento de email de confirmação.
+O projeto segue o padrão de arquitetura em camadas, organizado da seguinte forma:
+
+Controller → Service → Repository → Banco de Dados
+🔹 Camadas
+Controller
+Recebe requisições HTTP
+Retorna respostas para o cliente
+Service
+Implementa regras de negócio
+Valida os dados recebidos
+Repository
+Faz a comunicação com o banco de dados
+Model (Entity)
+Representa os dados da aplicação<img width="1024" height="1536" alt="5f8b92c8-02ea-41e9-a03f-c0221f908c90" src="https://github.com/user-attachments/assets/0ec9606a-2b5e-4829-82a0-36bb3e247501" />
