@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/inscricoes";
+const API_URL = "/api/inscricoes";
 
 const form = document.getElementById("formInscricao");
 const mensagem = document.getElementById("mensagem");
