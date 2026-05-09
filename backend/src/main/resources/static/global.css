@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Poppins:wght@600;800&display=swap');
+
+:root {
+    --tech-dark: #020617;
+    --tech-blue: #2563eb;
+    --tech-purple: #7c3aed;
+    --tech-neon: #22d3ee;
+    --tech-glow: rgba(34, 211, 238, 0.6);
+}
+
+/* FUNDO */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+
+    background: linear-gradient(135deg, rgba(2,6,23,0.95), rgba(30,41,59,0.95)),
+    url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+}
+
+/* HEADER */
+header {
+    padding: 35px 0;
+    background: rgba(2,6,23,0.6);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header img {
+    width: 320px !important;
+    filter: brightness(0) invert(1);
+    transition: 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.08) rotate(-1deg);
+}
+
+/* BOTÕES MAIS IMPACTANTES */
+header .btn {
+    padding: 14px 30px !important;
+    font-weight: 800 !important;
+    border-radius: 14px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+header .btn-outline-dark {
+    border: 2px solid var(--tech-neon) !important;
+    color: var(--tech-neon) !important;
+}
+
+header .btn-outline-dark:hover {
+    background: var(--tech-neon);
+    color: #000 !important;
+    box-shadow: 0 0 20px var(--tech-glow);
+}
+
+/* HERO */
+#inicio {
+    padding: 160px 0 100px;
+    text-align: center;
+}
+
+#inicio h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: -3px;
+
+    background: linear-gradient(90deg, #22d3ee, #7c3aed, #2563eb);
+    background-size: 300%;
+    animation: gradientMove 6s infinite linear;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 10px 40px rgba(0,0,0,0.9);
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% }
+    100% { background-position: 100% }
+}
+
+#inicio p {
+    font-size: 1.6rem;
+    opacity: 0.85;
+    margin-top: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.95) !important;
+    border-radius: 25px;
+    padding: 45px;
+    max-width: 500px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8),
+    0 0 30px var(--tech-glow);
+
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* TÍTULO CARD */
+.card h2 strong {
+    font-size: 2.3rem;
+    font-weight: 900;
+
+    background: linear-gradient(90deg, var(--tech-blue), var(--tech-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* INPUTS MAIS MODERNOS */
+.form-control {
+    height: 60px;
+    border-radius: 12px;
+    border: 2px solid #e5e7eb;
+    font-size: 1.1rem;
+    padding-left: 15px;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--tech-blue);
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
+
+/* BOTÃO PRINCIPAL TOP */
+.btn-primary {
+    height: 65px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    border-radius: 12px;
+
+    background: linear-gradient(90deg, var(--tech-blue), var(--tech-purple));
+    border: none;
+
+    transition: 0.4s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(124, 58, 237, 0.6);
+}
+
+/* EVENTOS */
+#eventos {
+    padding: 120px 0;
+    background: rgba(15,23,42,0.5);
+    backdrop-filter: blur(20px);
+}
+
+#eventos h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* IMAGENS MAIS MODERNAS */
+.img-fluid {
+    border-radius: 20px;
+    transition: 0.4s;
+    height: 300px;
+    object-fit: cover;
+}
+
+.img-fluid:hover {
+    transform: scale(1.07);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    #inicio h1 { font-size: 3rem; }
+    header img { width: 220px !important; }
+}
